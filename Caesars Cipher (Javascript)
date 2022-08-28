@@ -1,0 +1,30 @@
+function rot13(str) {
+  const arr = str.split('');
+  let y = "";
+  arr.forEach(caesar);
+  
+  function caesar(item){
+    
+    
+    if(item.charCodeAt() >= 65 && item.charCodeAt() <= 90 ){
+      var valHold = 0;
+      
+      if((item.charCodeAt()) <= 77){
+        
+        y += String.fromCharCode(item.charCodeAt() + 13);
+        
+      }
+      else{
+        y += String.fromCharCode( 64 + (13 - (90 % item.charCodeAt())) );
+      }
+      
+    }
+    else{
+      y += item;
+    }
+  }
+    
+  return y;
+}
+
+console.log( rot13("SERR CVMMN!") ); //return FREE PIZZA!
